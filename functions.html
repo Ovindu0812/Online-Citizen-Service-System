@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Online Citizen Service System</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body class="functions-page">
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-icon">🏛️</span>
+                <span>Citizen Service Portal</span>
+            </div>
+
+            <div class="navbar-menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="functions.html" class="nav-link active">Features</a>
+                <a href="help.html" class="nav-link">Help</a>
+            </div>
+
+            <div class="navbar-user">
+                <button id="userMenuBtn" class="user-menu-btn">
+                    <span class="user-icon">👤</span>
+                    <span id="userDisplayName">User</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div id="userMenu" class="dropdown-menu hidden">
+                    <a href="#" class="dropdown-item" id="profileBtn">👤 Profile</a>
+                    <a href="#" class="dropdown-item" id="settingsBtn">⚙️ Settings</a>
+                    <hr>
+                    <a href="#" class="dropdown-item" id="logoutBtn">🚪 Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Notification Area -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header">
+                <h1>System Features & Functionalities</h1>
+                <p>Discover all the powerful features available in our Online Citizen Service Management System</p>
+            </section>
+
+            <!-- Features Grid -->
+            <section class="features-section">
+                <div class="features-grid">
+                    <!-- Feature 1 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <h3>Service Request Submission</h3>
+                        <p>Submit service requests online with detailed descriptions, attachments, and priority levels. Track your request status in real-time.</p>
+                        <ul class="feature-list">
+                            <li>✓ Multiple service types</li>
+                            <li>✓ File attachments support</li>
+                            <li>✓ Priority selection</li>
+                            <li>✓ Real-time status tracking</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">👤</div>
+                        <h3>User Account Management</h3>
+                        <p>Create and manage your user account with full control over personal information, profile settings, and account security.</p>
+                        <ul class="feature-list">
+                            <li>✓ Easy registration</li>
+                            <li>✓ Profile customization</li>
+                            <li>✓ Password management</li>
+                            <li>✓ Account security</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Request Dashboard & Analytics</h3>
+                        <p>View comprehensive dashboards showing your request history, status distribution, and performance metrics.</p>
+                        <ul class="feature-list">
+                            <li>✓ Visual analytics</li>
+                            <li>✓ Status breakdown</li>
+                            <li>✓ Historical data</li>
+                            <li>✓ Export reports</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">🔐</div>
+                        <h3>Secure Authentication</h3>
+                        <p>Robust security measures including role-based access control, encrypted data transmission, and secure password storage.</p>
+                        <ul class="feature-list">
+                            <li>✓ Role-based access</li>
+                            <li>✓ Data encryption</li>
+                            <li>✓ Secure login</li>
+                            <li>✓ Session management</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 5 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">📢</div>
+                        <h3>Notifications & Alerts</h3>
+                        <p>Stay informed with real-time notifications about your requests, system updates, and important announcements.</p>
+                        <ul class="feature-list">
+                            <li>✓ Real-time alerts</li>
+                            <li>✓ Request updates</li>
+                            <li>✓ System announcements</li>
+                            <li>✓ Email notifications</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 6 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">👥</div>
+                        <h3>Admin User Management</h3>
+                        <p>Complete administrative control with ability to manage users, assign roles, monitor activities, and maintain system integrity.</p>
+                        <ul class="feature-list">
+                            <li>✓ User creation/deletion</li>
+                            <li>✓ Role assignment</li>
+                            <li>✓ Activity monitoring</li>
+                            <li>✓ User statistics</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 7 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h3>Request Management</h3>
+                        <p>Administrators can review, approve, reject, or complete service requests with detailed comments and status tracking.</p>
+                        <ul class="feature-list">
+                            <li>✓ Request review</li>
+                            <li>✓ Status updates</li>
+                            <li>✓ Bulk actions</li>
+                            <li>✓ Request filtering</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 8 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3>Advanced Reporting</h3>
+                        <p>Generate detailed reports on system usage, request statistics, performance metrics, and user activities with export options.</p>
+                        <ul class="feature-list">
+                            <li>✓ Custom reports</li>
+                            <li>✓ Data visualization</li>
+                            <li>✓ PDF export</li>
+                            <li>✓ Scheduled reports</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 9 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>System Configuration</h3>
+                        <p>Customize system settings including email configuration, notification preferences, security policies, and system parameters.</p>
+                        <ul class="feature-list">
+                            <li>✓ Email setup</li>
+                            <li>✓ Notification settings</li>
+                            <li>✓ Security policies</li>
+                            <li>✓ System parameters</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 10 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <h3>Responsive Design</h3>
+                        <p>Access the system seamlessly on desktop, tablet, and mobile devices with optimized interfaces for all screen sizes.</p>
+                        <ul class="feature-list">
+                            <li>✓ Mobile responsive</li>
+                            <li>✓ Touch-friendly</li>
+                            <li>✓ Adaptive layout</li>
+                            <li>✓ Fast loading</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 11 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <h3>Search & Filter</h3>
+                        <p>Powerful search and filtering capabilities to quickly find requests, users, and information across the system.</p>
+                        <ul class="feature-list">
+                            <li>✓ Advanced search</li>
+                            <li>✓ Multiple filters</li>
+                            <li>✓ Sort options</li>
+                            <li>✓ Saved searches</li>
+                        </ul>
+                    </div>
+
+                    <!-- Feature 12 -->
+                    <div class="feature-card">
+                        <div class="feature-icon">❓</div>
+                        <h3>Help & Support System</h3>
+                        <p>Comprehensive help documentation, FAQs, tutorials, and support contact information available throughout the system.</p>
+                        <ul class="feature-list">
+                            <li>✓ Help documentation</li>
+                            <li>✓ FAQ section</li>
+                            <li>✓ Tutorials</li>
+                            <li>✓ Support contact</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Service Types Section -->
+            <section class="services-section">
+                <h2>Available Service Types</h2>
+                <div class="services-list">
+                    <div class="service-item">
+                        <span class="service-icon">📜</span>
+                        <h3>License Application</h3>
+                        <p>Apply for various government licenses including business, trade, and professional licenses with simplified online process.</p>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">🏗️</span>
+                        <h3>Permit Request</h3>
+                        <p>Request construction, renovation, and special event permits with real-time processing status updates.</p>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">📄</span>
+                        <h3>Certificate Request</h3>
+                        <p>Request various government-issued certificates including birth, death, marriage, and educational certificates.</p>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">💡</span>
+                        <h3>Utility Bill Support</h3>
+                        <p>Get assistance with utility bill issues, payment problems, and service requests for water, electricity, and gas.</p>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">📢</span>
+                        <h3>File a Complaint</h3>
+                        <p>Lodge complaints about government services with tracking and resolution follow-up.</p>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-icon">🎯</span>
+                        <h3>Other Services</h3>
+                        <p>Submit requests for additional government services not covered in the standard categories.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- User Types & Roles Section -->
+            <section class="roles-section">
+                <h2>User Roles & Permissions</h2>
+                <div class="roles-comparison">
+                    <div class="role-card">
+                        <h3>🧑‍💼 Citizen</h3>
+                        <div class="role-permissions">
+                            <h4>Permissions:</h4>
+                            <ul>
+                                <li>✓ Create service requests</li>
+                                <li>✓ View request status</li>
+                                <li>✓ Manage own profile</li>
+                                <li>✓ View announcements</li>
+                                <li>✓ Access help center</li>
+                                <li>✗ Edit other users</li>
+                                <li>✗ View system reports</li>
+                                <li>✗ Modify settings</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="role-card">
+                        <h3>👨‍💼 Administrator</h3>
+                        <div class="role-permissions">
+                            <h4>Permissions:</h4>
+                            <ul>
+                                <li>✓ Manage all users</li>
+                                <li>✓ Process requests</li>
+                                <li>✓ View reports</li>
+                                <li>✓ System configuration</li>
+                                <li>✓ Activity monitoring</li>
+                                <li>✓ Post announcements</li>
+                                <li>✓ Backup & restore</li>
+                                <li>✓ User access control</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Capabilities Section -->
+            <section class="tech-section">
+                <h2>Technical Capabilities</h2>
+                <div class="tech-grid">
+                    <div class="tech-card">
+                        <h3>Performance</h3>
+                        <ul>
+                            <li>Fast page loading (< 2s)</li>
+                            <li>Optimized database queries</li>
+                            <li>Efficient caching</li>
+                            <li>99.8% uptime SLA</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>Security</h3>
+                        <ul>
+                            <li>SSL/TLS encryption</li>
+                            <li>Role-based access control</li>
+                            <li>Secure password storage</li>
+                            <li>Regular security audits</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>Compatibility</h3>
+                        <ul>
+                            <li>Chrome, Firefox, Safari, Edge</li>
+                            <li>iOS & Android support</li>
+                            <li>Responsive design</li>
+                            <li>Accessibility compliant</li>
+                        </ul>
+                    </div>
+                    <div class="tech-card">
+                        <h3>Scalability</h3>
+                        <ul>
+                            <li>Handle 10,000+ users</li>
+                            <li>Process 1000+ requests/day</li>
+                            <li>Distributed architecture</li>
+                            <li>Auto-scaling capability</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Mission</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Online Services</a></li>
+                        <li><a href="#">Locations</a></li>
+                        <li><a href="#">Hours</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Online Citizen Service System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/script.js"></script>
+</body>
+</html>

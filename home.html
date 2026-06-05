@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Online Citizen Service System</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body class="home-page">
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-icon">🏛️</span>
+                <span>Citizen Service Portal</span>
+            </div>
+
+            <div class="navbar-menu">
+                <a href="home.html" class="nav-link active">Home</a>
+                <a href="functions.html" class="nav-link">Features</a>
+                <a href="help.html" class="nav-link">Help</a>
+            </div>
+
+            <div class="navbar-user">
+                <button id="userMenuBtn" class="user-menu-btn">
+                    <span class="user-icon">👤</span>
+                    <span id="userDisplayName">User</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div id="userMenu" class="dropdown-menu hidden">
+                    <a href="#" class="dropdown-item" id="profileBtn">👤 Profile</a>
+                    <a href="#" class="dropdown-item" id="settingsBtn">⚙️ Settings</a>
+                    <hr>
+                    <a href="#" class="dropdown-item" id="logoutBtn">🚪 Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Notification Area -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-card">
+                    <h1 id="welcomeTitle">Welcome to Citizen Service Portal</h1>
+                    <p id="welcomeMessage">Manage your service requests and access government services efficiently</p>
+                    <button class="btn btn-primary" id="newServiceBtn">
+                        <span>+</span> Submit New Service Request
+                    </button>
+                </div>
+            </section>
+
+            <!-- Dashboard Stats (Logged In) -->
+            <section id="dashboardStats" class="dashboard-stats hidden">
+                <div class="stat-card">
+                    <div class="stat-icon">📋</div>
+                    <div class="stat-content">
+                        <h3 id="totalRequestsCount">0</h3>
+                        <p>Total Requests</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">✅</div>
+                    <div class="stat-content">
+                        <h3 id="completedRequestsCount">0</h3>
+                        <p>Completed</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⏳</div>
+                    <div class="stat-content">
+                        <h3 id="pendingRequestsCount">0</h3>
+                        <p>Pending</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚠️</div>
+                    <div class="stat-content">
+                        <h3 id="rejectedRequestsCount">0</h3>
+                        <p>Rejected</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Links Section -->
+            <section class="quick-links-section">
+                <h2>Quick Actions</h2>
+                <div class="quick-links-grid">
+                    <div class="quick-link-card" id="myRequestsLink">
+                        <div class="icon">📊</div>
+                        <h3>My Service Requests</h3>
+                        <p>View and track your requests</p>
+                    </div>
+                    <div class="quick-link-card" id="newRequestLink">
+                        <div class="icon">➕</div>
+                        <h3>Submit New Request</h3>
+                        <p>Create a new service request</p>
+                    </div>
+                    <div class="quick-link-card" id="profileLink">
+                        <div class="icon">👤</div>
+                        <h3>My Profile</h3>
+                        <p>Manage your account information</p>
+                    </div>
+                    <div class="quick-link-card" id="helpLink">
+                        <div class="icon">❓</div>
+                        <h3>Help & Support</h3>
+                        <p>Get assistance and FAQs</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Requests Section (Logged In) -->
+            <section id="recentRequestsSection" class="recent-requests-section hidden">
+                <div class="section-header">
+                    <h2>Recent Service Requests</h2>
+                    <a href="#" class="link">View All</a>
+                </div>
+                <table id="recentRequestsTable" class="requests-table">
+                    <thead>
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Populated by JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Announcements Section -->
+            <section class="announcements-section">
+                <h2>Important Announcements</h2>
+                <div class="announcements-list">
+                    <div class="announcement-card">
+                        <div class="announcement-date">June 05, 2026</div>
+                        <h3>System Maintenance Scheduled</h3>
+                        <p>The system will undergo maintenance on Sunday 11 PM - Monday 2 AM. Services may be unavailable during this time.</p>
+                    </div>
+                    <div class="announcement-card">
+                        <div class="announcement-date">June 03, 2026</div>
+                        <h3>New Online Payment Option Available</h3>
+                        <p>You can now pay your service fees online using credit cards and digital wallets for faster processing.</p>
+                    </div>
+                    <div class="announcement-card">
+                        <div class="announcement-date">May 30, 2026</div>
+                        <h3>Mobile App Now Available</h3>
+                        <p>Download our mobile application to manage your service requests on the go with easy notifications.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Service Request Modal -->
+    <div id="serviceModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Submit New Service Request</h2>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <form id="serviceForm" class="modal-body">
+                <div class="form-group">
+                    <label for="serviceType">Service Type *</label>
+                    <select id="serviceType" name="serviceType" required>
+                        <option value="">Select a service</option>
+                        <option value="license">License Application</option>
+                        <option value="permit">Permit Request</option>
+                        <option value="certificate">Certificate Request</option>
+                        <option value="utility">Utility Bill Support</option>
+                        <option value="complaint">File a Complaint</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="servicePriority">Priority Level</label>
+                    <select id="servicePriority" name="priority">
+                        <option value="low">Low</option>
+                        <option value="medium" selected>Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="serviceDescription">Description *</label>
+                    <textarea 
+                        id="serviceDescription" 
+                        name="description" 
+                        placeholder="Describe your service request in detail"
+                        rows="5"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="serviceAttachment">Attachment (Optional)</label>
+                    <input type="file" id="serviceAttachment" name="attachment">
+                    <small>Max file size: 5MB. Accepted formats: PDF, JPG, PNG</small>
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="agreeTerms" name="agreeTerms" required>
+                    <label for="agreeTerms">I agree to the terms and conditions</label>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelServiceBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Submit Request</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Profile Modal -->
+    <div id="profileModal" class="modal hidden">
+        <div class="modal-content modal-lg">
+            <div class="modal-header">
+                <h2>My Profile</h2>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="profile-section">
+                    <div class="profile-header">
+                        <div class="profile-avatar">👤</div>
+                        <div class="profile-info">
+                            <h3 id="profileName">John Doe</h3>
+                            <p id="profileRole">Citizen</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-details">
+                    <h3>Personal Information</h3>
+                    <div class="detail-grid">
+                        <div class="detail-item">
+                            <label>Email</label>
+                            <p id="profileEmail">citizen@example.com</p>
+                        </div>
+                        <div class="detail-item">
+                            <label>Phone</label>
+                            <p id="profilePhone">+1 (555) 123-4567</p>
+                        </div>
+                        <div class="detail-item">
+                            <label>Date of Birth</label>
+                            <p id="profileDOB">January 15, 1990</p>
+                        </div>
+                        <div class="detail-item">
+                            <label>Citizen ID</label>
+                            <p id="profileID">ID-123456789</p>
+                        </div>
+                        <div class="detail-item">
+                            <label>Address</label>
+                            <p id="profileAddress">123 Main Street, City, Country</p>
+                        </div>
+                        <div class="detail-item">
+                            <label>Member Since</label>
+                            <p id="profileJoinDate">March 10, 2020</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h3>Account Settings</h3>
+                    <button class="btn btn-secondary">Change Password</button>
+                    <button class="btn btn-secondary">Update Profile</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="closeProfileBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Mission</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Online Services</a></li>
+                        <li><a href="#">Locations</a></li>
+                        <li><a href="#">Hours</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Online Citizen Service System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/script.js"></script>
+</body>
+</html>

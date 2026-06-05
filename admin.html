@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Online Citizen Service System</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body class="admin-page">
+    <!-- Admin Layout: Sidebar + Main Content -->
+    <div class="admin-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span class="sidebar-logo">🏛️</span>
+                <span class="sidebar-title">Admin Panel</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-section="dashboard">
+                    <span class="icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="sidebar-link" data-section="users">
+                    <span class="icon">👥</span>
+                    <span>Manage Users</span>
+                </a>
+                <a href="#" class="sidebar-link" data-section="requests">
+                    <span class="icon">📋</span>
+                    <span>Service Requests</span>
+                </a>
+                <a href="#" class="sidebar-link" data-section="reports">
+                    <span class="icon">📈</span>
+                    <span>Reports</span>
+                </a>
+                <a href="#" class="sidebar-link" data-section="settings">
+                    <span class="icon">⚙️</span>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button id="adminLogoutBtn" class="btn btn-small">Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="admin-main">
+            <!-- Top Admin Bar -->
+            <div class="admin-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+                    <h1 id="pageTitle">Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <div class="admin-user-info">
+                        <span id="adminName">Admin User</span>
+                        <span class="user-icon">👤</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notification Area -->
+            <div id="notification" class="notification"></div>
+
+            <!-- Content Container -->
+            <div class="admin-content">
+                <!-- Dashboard Section -->
+                <section id="dashboardSection" class="admin-section active">
+                    <div class="section-header">
+                        <h2>Dashboard</h2>
+                    </div>
+
+                    <!-- Admin Stats -->
+                    <div class="admin-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-content">
+                                <h3 id="totalUsersCount">45</h3>
+                                <p>Total Users</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📋</div>
+                            <div class="stat-content">
+                                <h3 id="totalRequestsCount">128</h3>
+                                <p>Total Requests</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">✅</div>
+                            <div class="stat-content">
+                                <h3 id="completedRequestsCount">92</h3>
+                                <p>Completed</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">⏳</div>
+                            <div class="stat-content">
+                                <h3 id="pendingRequestsCount">28</h3>
+                                <p>Pending</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts/Analytics -->
+                    <div class="analytics-grid">
+                        <div class="analytics-card">
+                            <h3>Request Status Distribution</h3>
+                            <div class="status-distribution">
+                                <div class="distribution-item">
+                                    <span class="status-badge completed">Completed</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 71%;"></div>
+                                    </div>
+                                    <span class="percentage">92/128</span>
+                                </div>
+                                <div class="distribution-item">
+                                    <span class="status-badge pending">Pending</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 22%;"></div>
+                                    </div>
+                                    <span class="percentage">28/128</span>
+                                </div>
+                                <div class="distribution-item">
+                                    <span class="status-badge rejected">Rejected</span>
+                                    <div class="progress-bar">
+                                        <div class="progress" style="width: 8%;"></div>
+                                    </div>
+                                    <span class="percentage">8/128</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="analytics-card">
+                            <h3>Recent Activity</h3>
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <span class="time">10:30 AM</span>
+                                    <p>New user registration: Jane Smith</p>
+                                </div>
+                                <div class="activity-item">
+                                    <span class="time">09:15 AM</span>
+                                    <p>Service request #SR-1025 marked as completed</p>
+                                </div>
+                                <div class="activity-item">
+                                    <span class="time">08:45 AM</span>
+                                    <p>User updated profile information</p>
+                                </div>
+                                <div class="activity-item">
+                                    <span class="time">07:20 AM</span>
+                                    <p>New service request submitted: License Application</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- User Management Section -->
+                <section id="usersSection" class="admin-section hidden">
+                    <div class="section-header">
+                        <h2>Manage Users</h2>
+                        <button class="btn btn-primary" id="addUserBtn">+ Add New User</button>
+                    </div>
+
+                    <div class="filters">
+                        <input type="text" id="userSearchInput" placeholder="Search users by name or email..." class="search-input">
+                        <select id="userRoleFilter" class="filter-select">
+                            <option value="">All Roles</option>
+                            <option value="citizen">Citizen</option>
+                            <option value="staff">Staff</option>
+                        </select>
+                        <select id="userStatusFilter" class="filter-select">
+                            <option value="">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+
+                    <table id="usersTable" class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Joined Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Service Requests Section -->
+                <section id="requestsSection" class="admin-section hidden">
+                    <div class="section-header">
+                        <h2>Service Requests</h2>
+                    </div>
+
+                    <div class="filters">
+                        <input type="text" id="requestSearchInput" placeholder="Search requests by ID or user..." class="search-input">
+                        <select id="requestTypeFilter" class="filter-select">
+                            <option value="">All Types</option>
+                            <option value="license">License Application</option>
+                            <option value="permit">Permit Request</option>
+                            <option value="certificate">Certificate Request</option>
+                            <option value="utility">Utility Bill Support</option>
+                            <option value="complaint">File a Complaint</option>
+                        </select>
+                        <select id="requestStatusFilter" class="filter-select">
+                            <option value="">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="approved">Approved</option>
+                            <option value="completed">Completed</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+
+                    <table id="requestsTable" class="admin-table">
+                        <thead>
+                            <tr>
+                                <th>Request ID</th>
+                                <th>User</th>
+                                <th>Type</th>
+                                <th>Priority</th>
+                                <th>Status</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Reports Section -->
+                <section id="reportsSection" class="admin-section hidden">
+                    <div class="section-header">
+                        <h2>Reports</h2>
+                    </div>
+
+                    <div class="reports-grid">
+                        <div class="report-card">
+                            <h3>User Statistics</h3>
+                            <div class="report-stats">
+                                <div class="report-stat">
+                                    <span class="label">Total Users:</span>
+                                    <span class="value">45</span>
+                                </div>
+                                <div class="report-stat">
+                                    <span class="label">Active Users:</span>
+                                    <span class="value">38</span>
+                                </div>
+                                <div class="report-stat">
+                                    <span class="label">New Users (This Month):</span>
+                                    <span class="value">5</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary">Download Report</button>
+                        </div>
+
+                        <div class="report-card">
+                            <h3>Service Request Statistics</h3>
+                            <div class="report-stats">
+                                <div class="report-stat">
+                                    <span class="label">Total Requests:</span>
+                                    <span class="value">128</span>
+                                </div>
+                                <div class="report-stat">
+                                    <span class="label">Avg Processing Time:</span>
+                                    <span class="value">2.5 days</span>
+                                </div>
+                                <div class="report-stat">
+                                    <span class="label">Completion Rate:</span>
+                                    <span class="value">71.9%</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary">Download Report</button>
+                        </div>
+
+                        <div class="report-card">
+                            <h3>System Performance</h3>
+                            <div class="report-stats">
+                                <div class="report-stat">
+                                    <span class="label">Uptime:</span>
+                                    <span class="value">99.8%</span>
+                                </div>
+                                <div class="report-stat">
+                                    <span class="label">Avg Response Time:</span>
+                                    <span class="value">245ms</span>
+                                </div>
+                                <div class="report-stat">
+                                    <span class="label">Database Size:</span>
+                                    <span class="value">45 MB</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary">Download Report</button>
+                        </div>
+
+                        <div class="report-card">
+                            <h3>Service Type Distribution</h3>
+                            <div class="report-stats">
+                                <div class="report-stat">
+                                    <span class="label">License Applications:</span>
+                                    <span class="value">38</span>
+                                </div>
+                                <div class="report-stat">
+                                    <span class="label">Permit Requests:</span>
+                                    <span class="value">32</span>
+                                </div>
+                                <div class="report-stat">
+                                    <span class="label">Certificate Requests:</span>
+                                    <span class="value">28</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary">Download Report</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Settings Section -->
+                <section id="settingsSection" class="admin-section hidden">
+                    <div class="section-header">
+                        <h2>System Settings</h2>
+                    </div>
+
+                    <div class="settings-grid">
+                        <div class="settings-card">
+                            <h3>General Settings</h3>
+                            <form class="settings-form">
+                                <div class="form-group">
+                                    <label>System Name</label>
+                                    <input type="text" value="Online Citizen Service System">
+                                </div>
+                                <div class="form-group">
+                                    <label>System Email</label>
+                                    <input type="email" value="admin@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label>Support Phone</label>
+                                    <input type="tel" value="+1 (555) 123-4567">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Email Settings</h3>
+                            <form class="settings-form">
+                                <div class="form-group">
+                                    <label>SMTP Server</label>
+                                    <input type="text" value="smtp.example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label>SMTP Port</label>
+                                    <input type="number" value="587">
+                                </div>
+                                <div class="form-group checkbox">
+                                    <input type="checkbox" checked>
+                                    <label>Enable Email Notifications</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Security Settings</h3>
+                            <form class="settings-form">
+                                <div class="form-group checkbox">
+                                    <input type="checkbox" checked>
+                                    <label>Enable Two-Factor Authentication</label>
+                                </div>
+                                <div class="form-group checkbox">
+                                    <input type="checkbox" checked>
+                                    <label>Require Strong Passwords</label>
+                                </div>
+                                <div class="form-group">
+                                    <label>Session Timeout (minutes)</label>
+                                    <input type="number" value="30">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+
+                        <div class="settings-card">
+                            <h3>Notification Settings</h3>
+                            <form class="settings-form">
+                                <div class="form-group checkbox">
+                                    <input type="checkbox" checked>
+                                    <label>New User Registration</label>
+                                </div>
+                                <div class="form-group checkbox">
+                                    <input type="checkbox" checked>
+                                    <label>New Service Request</label>
+                                </div>
+                                <div class="form-group checkbox">
+                                    <input type="checkbox" checked>
+                                    <label>System Alert</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add/Edit User Modal -->
+    <div id="userModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="userModalTitle">Add New User</h2>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <form id="userForm" class="modal-body">
+                <div class="form-group">
+                    <label for="userFirstName">First Name *</label>
+                    <input type="text" id="userFirstName" name="firstName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="userLastName">Last Name *</label>
+                    <input type="text" id="userLastName" name="lastName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="userEmail">Email *</label>
+                    <input type="email" id="userEmail" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="userPhone">Phone</label>
+                    <input type="tel" id="userPhone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="userRole">Role *</label>
+                    <select id="userRole" name="role" required>
+                        <option value="">Select a role</option>
+                        <option value="citizen">Citizen</option>
+                        <option value="staff">Staff</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="userStatus">Status</label>
+                    <select id="userStatus" name="status">
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelUserBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Save User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Request Status Modal -->
+    <div id="requestModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="requestModalTitle">Update Request Status</h2>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <form id="requestStatusForm" class="modal-body">
+                <div class="form-group">
+                    <label>Request ID</label>
+                    <input type="text" id="requestIDDisplay" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="requestStatusSelect">Status *</label>
+                    <select id="requestStatusSelect" name="status" required>
+                        <option value="">Select status</option>
+                        <option value="pending">Pending</option>
+                        <option value="approved">Approved</option>
+                        <option value="completed">Completed</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="requestComment">Comments</label>
+                    <textarea id="requestComment" name="comment" rows="4" placeholder="Add any comments..."></textarea>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelRequestBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Update Status</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="src/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Citizen Service System - Login</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>Citizen Service Portal</h1>
+                <p class="subtitle">Efficient Government Service Management</p>
+            </div>
+
+            <!-- Login Tabs -->
+            <div class="login-tabs">
+                <button class="tab-btn active" data-tab="citizen-login">
+                    <span class="icon">👤</span> Citizen Login
+                </button>
+                <button class="tab-btn" data-tab="admin-login">
+                    <span class="icon">⚙️</span> Admin Login
+                </button>
+            </div>
+
+            <!-- Citizen Login Form -->
+            <div id="citizen-login" class="tab-content active">
+                <form id="citizenLoginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="citizen-email">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="citizen-email" 
+                            name="email" 
+                            placeholder="Enter your email"
+                            required
+                        >
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="citizen-password">Password</label>
+                        <div class="password-field">
+                            <input 
+                                type="password" 
+                                id="citizen-password" 
+                                name="password" 
+                                placeholder="Enter your password"
+                                required
+                            >
+                            <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                👁️
+                            </button>
+                        </div>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="citizen-remember" name="remember">
+                        <label for="citizen-remember">Remember me</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+
+                <p class="form-footer">
+                    Don't have an account? <a href="#" class="link">Create one</a>
+                </p>
+
+                <div class="demo-credentials">
+                    <h4>Demo Credentials (Citizen):</h4>
+                    <p>Email: <strong>citizen@example.com</strong></p>
+                    <p>Password: <strong>password123</strong></p>
+                </div>
+            </div>
+
+            <!-- Admin Login Form -->
+            <div id="admin-login" class="tab-content">
+                <form id="adminLoginForm" class="login-form">
+                    <div class="form-group">
+                        <label for="admin-username">Username</label>
+                        <input 
+                            type="text" 
+                            id="admin-username" 
+                            name="username" 
+                            placeholder="Enter your username"
+                            required
+                        >
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="admin-password">Password</label>
+                        <div class="password-field">
+                            <input 
+                                type="password" 
+                                id="admin-password" 
+                                name="password" 
+                                placeholder="Enter your password"
+                                required
+                            >
+                            <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                👁️
+                            </button>
+                        </div>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group checkbox">
+                        <input type="checkbox" id="admin-remember" name="remember">
+                        <label for="admin-remember">Remember me</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Login as Admin</button>
+                </form>
+
+                <p class="form-footer">
+                    Need help? <a href="#" class="link">Contact support</a>
+                </p>
+
+                <div class="demo-credentials">
+                    <h4>Demo Credentials (Admin):</h4>
+                    <p>Username: <strong>admin</strong></p>
+                    <p>Password: <strong>admin123</strong></p>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="login-footer">
+                <p>&copy; 2026 Online Citizen Service System. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notification Area -->
+        <div id="notification" class="notification"></div>
+    </div>
+
+    <script src="src/script.js"></script>
+</body>
+</html>

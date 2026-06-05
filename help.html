@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & Support - Online Citizen Service System</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body class="help-page">
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <span class="logo-icon">🏛️</span>
+                <span>Citizen Service Portal</span>
+            </div>
+
+            <div class="navbar-menu">
+                <a href="home.html" class="nav-link">Home</a>
+                <a href="functions.html" class="nav-link">Features</a>
+                <a href="help.html" class="nav-link active">Help</a>
+            </div>
+
+            <div class="navbar-user">
+                <button id="userMenuBtn" class="user-menu-btn">
+                    <span class="user-icon">👤</span>
+                    <span id="userDisplayName">User</span>
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <div id="userMenu" class="dropdown-menu hidden">
+                    <a href="#" class="dropdown-item" id="profileBtn">👤 Profile</a>
+                    <a href="#" class="dropdown-item" id="settingsBtn">⚙️ Settings</a>
+                    <hr>
+                    <a href="#" class="dropdown-item" id="logoutBtn">🚪 Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Notification Area -->
+    <div id="notification" class="notification"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header">
+                <h1>Help & Support Center</h1>
+                <p>Find answers to common questions and learn how to use the system effectively</p>
+            </section>
+
+            <!-- Search Section -->
+            <section class="help-search">
+                <div class="search-container">
+                    <input type="text" id="helpSearchInput" placeholder="Search help topics..." class="help-search-input">
+                    <button class="btn btn-primary">Search</button>
+                </div>
+            </section>
+
+            <!-- Help Sections -->
+            <section class="help-content">
+                <!-- Getting Started -->
+                <div class="help-section">
+                    <h2>📚 Getting Started</h2>
+                    <div class="help-items">
+                        <div class="help-item">
+                            <h3>How do I create an account?</h3>
+                            <p>To create an account, click on "Create one" link on the login page. Fill in your basic information including email, name, and password. Verify your email address and you're ready to start using the system.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>How do I log in?</h3>
+                            <p>Go to the login page and select whether you are a citizen or administrator. Enter your email/username and password, then click the Login button. Check "Remember me" if you want to stay logged in on this device.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>What if I forgot my password?</h3>
+                            <p>Click on "Forgot Password" link on the login page. Enter your email address and we'll send you a password reset link. Check your email and follow the instructions to create a new password.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>How do I update my profile?</h3>
+                            <p>Click on your user menu in the top-right corner and select "Profile". From there, you can update your personal information, contact details, and preferences. Remember to save your changes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Requests -->
+                <div class="help-section">
+                    <h2>📋 Service Requests</h2>
+                    <div class="help-items">
+                        <div class="help-item">
+                            <h3>How do I submit a service request?</h3>
+                            <p>Click on "Submit New Service Request" button on the home page. Select the service type, set priority level, provide a detailed description, and optionally attach supporting documents. Click "Submit Request" to complete the process.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>What file types can I attach to my request?</h3>
+                            <p>You can attach PDF, JPG, PNG, and DOC files. The maximum file size is 5MB per file. These documents will help us process your request more efficiently.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>Can I edit a submitted request?</h3>
+                            <p>Once submitted, you cannot edit your request directly. However, if your request is still in "Pending" status, contact our support team and we can help you modify it. Approved or completed requests cannot be changed.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>How do I track my request status?</h3>
+                            <p>Go to "My Service Requests" section from the home page or dashboard. You can see all your requests with their current status. Click on any request to view detailed information and processing updates.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>How long does it take to process a request?</h3>
+                            <p>Processing time depends on the service type. Standard requests typically take 3-5 business days. Priority requests may be processed faster. You'll receive email notifications for any status updates.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>What do different request statuses mean?</h3>
+                            <p><strong>Pending:</strong> Under review. <strong>Approved:</strong> Your request has been approved and is being processed. <strong>Completed:</strong> Request is done; you can collect/receive your service. <strong>Rejected:</strong> Request was not approved; check comments for reasons.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Management -->
+                <div class="help-section">
+                    <h2>👤 Account Management</h2>
+                    <div class="help-items">
+                        <div class="help-item">
+                            <h3>How do I change my password?</h3>
+                            <p>Go to your profile settings by clicking your user menu and selecting "Profile". Look for "Change Password" option and enter your current password and new password. Make sure your new password is strong (at least 8 characters with numbers and symbols).</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>How do I delete my account?</h3>
+                            <p>Account deletion is available in account settings. Note that this action is permanent and will remove all your data. Contact support if you need assistance with this process.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>How do I deactivate notifications?</h3>
+                            <p>Go to Settings from your user menu and adjust your notification preferences. You can choose to disable email notifications, in-app alerts, or both.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>Can I have multiple accounts?</h3>
+                            <p>Each person should maintain only one account. Multiple accounts may violate our terms of service. If you need to update your account information, use the profile update feature instead.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Admin Help -->
+                <div class="help-section">
+                    <h2>⚙️ Administrator Guide</h2>
+                    <div class="help-items">
+                        <div class="help-item">
+                            <h3>How do I add a new user?</h3>
+                            <p>From the Admin Dashboard, go to "Manage Users" section. Click "Add New User" button. Fill in the user's details including name, email, role, and initial status. Click "Save User" to create the account.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>How do I edit a user's information?</h3>
+                            <p>In "Manage Users" section, find the user and click the edit button (pencil icon). Update the required information and click "Save Changes". The user will be notified of any important changes to their account.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>How do I delete a user?</h3>
+                            <p>Select the user from the users list and click the delete button (trash icon). Confirm the deletion action. Note: This will deactivate the account but preserve historical data for records.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>How do I process service requests?</h3>
+                            <p>Go to "Service Requests" section. Review pending requests, click on any request to view details. Click "Update Status" to approve, complete, or reject the request. Add comments to explain your decision.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>How do I generate reports?</h3>
+                            <p>From the Admin Dashboard, go to "Reports" section. Choose the report type (users, requests, or system performance). Customize the date range and filters as needed. Click "Download Report" to export as PDF.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>How do I configure system settings?</h3>
+                            <p>Go to "Settings" section in the Admin Dashboard. Update general settings, email configuration, security settings, and notification preferences. Click "Save Changes" for each setting group.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Support -->
+                <div class="help-section">
+                    <h2>🔧 Technical Support</h2>
+                    <div class="help-items">
+                        <div class="help-item">
+                            <h3>What browsers are supported?</h3>
+                            <p>We support the latest versions of Chrome, Firefox, Safari, and Microsoft Edge. For best experience, please use the latest browser version. Mobile browsers on iOS and Android are also fully supported.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>Why is the page loading slowly?</h3>
+                            <p>Check your internet connection speed. Clear your browser cache and try again. If the problem persists, try a different browser. Contact support if you continue to experience issues.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>The page shows a security warning. Is it safe?</h3>
+                            <p>Our website uses SSL encryption for secure communication. If you see a warning, ensure you're visiting the official domain. Avoid accessing the system from public Wi-Fi without a VPN.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>Can I use the system on my mobile phone?</h3>
+                            <p>Yes! The system is fully responsive and optimized for mobile devices. Simply visit the website on your phone's browser. No app installation is required.</p>
+                        </div>
+                        <div class="help-item">
+                            <h3>What should I do if I encounter an error?</h3>
+                            <p>Note the error message and code (if shown). Take a screenshot and contact our support team. Include details about what you were doing when the error occurred and what browser you're using.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ -->
+                <div class="help-section">
+                    <h2>❓ Frequently Asked Questions</h2>
+                    <div class="faq-items">
+                        <div class="faq-item">
+                            <h3>Is my personal information safe?</h3>
+                            <p>Yes. We use advanced encryption and security measures to protect your data. Your information is never shared with third parties without your consent.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Is the system available 24/7?</h3>
+                            <p>We strive to maintain 99.8% uptime. Occasional maintenance windows may occur (usually weekends). We notify users in advance of any scheduled downtime.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Can I request a refund?</h3>
+                            <p>Refund policies depend on the specific service. Contact our support team to discuss your request. Each case is evaluated individually.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>How do I provide feedback?</h3>
+                            <p>We welcome your suggestions! Use the feedback form in the help section or contact our support team directly. Your input helps us improve the system.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>Are there any fees for using this system?</h3>
+                            <p>Creating an account and submitting requests is free. Some services may have processing fees set by the government. Fees are clearly displayed before you complete any transaction.</p>
+                        </div>
+                        <div class="faq-item">
+                            <h3>How often is the system updated?</h3>
+                            <p>We regularly update the system with new features and security improvements. Most updates are transparent and don't require any action from users.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Support -->
+                <div class="help-section contact-section">
+                    <h2>📞 Contact Support</h2>
+                    <p>Couldn't find the answer you're looking for? Our support team is here to help.</p>
+                    <div class="contact-methods">
+                        <div class="contact-card">
+                            <h3>📧 Email</h3>
+                            <p>support@citizenservice.gov</p>
+                            <p>Response time: Within 24 hours</p>
+                        </div>
+                        <div class="contact-card">
+                            <h3>☎️ Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                            <p>Monday - Friday: 9 AM - 5 PM</p>
+                        </div>
+                        <div class="contact-card">
+                            <h3>💬 Live Chat</h3>
+                            <p>Available on our website</p>
+                            <p>Hours: 10 AM - 4 PM (Weekdays)</p>
+                        </div>
+                        <div class="contact-card">
+                            <h3>📍 Office</h3>
+                            <p>123 Government Center</p>
+                            <p>City, Country 12345</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Troubleshooting -->
+                <div class="help-section">
+                    <h2>🔍 Troubleshooting</h2>
+                    <div class="troubleshooting-list">
+                        <div class="troubleshooting-item">
+                            <h3>I can't log in to my account</h3>
+                            <details>
+                                <summary>Expand for solutions</summary>
+                                <ul>
+                                    <li>Verify that you're using the correct email/username</li>
+                                    <li>Check that Caps Lock is not on when entering your password</li>
+                                    <li>Reset your password using "Forgot Password" option</li>
+                                    <li>Clear browser cache and cookies</li>
+                                    <li>Try a different browser</li>
+                                    <li>Contact support if the issue persists</li>
+                                </ul>
+                            </details>
+                        </div>
+                        <div class="troubleshooting-item">
+                            <h3>I'm not receiving emails from the system</h3>
+                            <details>
+                                <summary>Expand for solutions</summary>
+                                <ul>
+                                    <li>Check your spam/junk folder</li>
+                                    <li>Verify your email address is correct in your profile</li>
+                                    <li>Check notification settings - ensure emails are enabled</li>
+                                    <li>Try submitting a test request</li>
+                                    <li>Contact support to verify your email configuration</li>
+                                </ul>
+                            </details>
+                        </div>
+                        <div class="troubleshooting-item">
+                            <h3>My file upload is not working</h3>
+                            <details>
+                                <summary>Expand for solutions</summary>
+                                <ul>
+                                    <li>Check that file is less than 5MB</li>
+                                    <li>Verify file format is PDF, JPG, PNG, or DOC</li>
+                                    <li>Try a different file</li>
+                                    <li>Clear browser cache and try again</li>
+                                    <li>Try a different browser</li>
+                                    <li>Contact support if issue continues</li>
+                                </ul>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Mission</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Online Services</a></li>
+                        <li><a href="#">Locations</a></li>
+                        <li><a href="#">Hours</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Accessibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Online Citizen Service System. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/script.js"></script>
+</body>
+</html>
